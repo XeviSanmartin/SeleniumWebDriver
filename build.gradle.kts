@@ -22,6 +22,7 @@ dependencies {
 
     // 3. El framework de tests (JUnit 5)
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
+    testImplementation("org.testng:testng:6.9.6")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     // 4. (Opcional) El motor de logs i el connector CDP que vam afegir abans per netejar els avisos de la consola
