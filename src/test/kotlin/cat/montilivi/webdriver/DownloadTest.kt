@@ -1,8 +1,10 @@
 package cat.montilivi.webdriver
 
-import org.junit.Assert.assertThat
+import org.junit.jupiter.api.AfterEach
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Assertions.assertNotEquals
 import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Test
 import org.openqa.selenium.By
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.chrome.ChromeDriver
@@ -12,10 +14,6 @@ import org.openqa.selenium.firefox.FirefoxOptions
 import org.openqa.selenium.firefox.FirefoxProfile
 import org.openqa.selenium.interactions.Actions
 import org.openqa.selenium.safari.SafariDriver
-import org.testng.annotations.AfterMethod
-import org.testng.annotations.BeforeMethod
-import org.testng.annotations.Test
-import sun.nio.cs.Surrogate.`is`
 import java.io.File
 import java.io.IOException
 import java.nio.file.Files
@@ -163,7 +161,7 @@ class DownloadTest : TestBasic() {
         }
     }
 
-    @BeforeMethod
+    @BeforeEach
     fun setUp() {
         folder = File(
             ("src" + File.separator + "test"
@@ -211,7 +209,7 @@ class DownloadTest : TestBasic() {
         }
     }
 
-    @AfterMethod
+    @AfterEach
     fun tearDown() {
         driver.quit()
     }

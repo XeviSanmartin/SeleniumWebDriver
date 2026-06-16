@@ -31,6 +31,16 @@ dependencies {
 
     // 5. Llibreries estàndard de Kotlin per a proves
     testImplementation(kotlin("test"))
+    // Dependència per utilitzar el Browser Mob Proxy en les proves
+    // molts anys sense manteniment (la versió 2.1.5 és del 2017
+    /*
+    alternatives més modernes:
+
+BrowserUp Proxy: És un fork directe de BrowserMob Proxy mantingut activament i dissenyat precisament per solucionar els problemes de l'original. La migració és gairebé directa. La seva dependència és com.browserup:browserup-proxy-core.
+
+Selenium 4 (Network Interception): Si utilitzes BrowserMob per capturar tràfic (crear fitxers HAR) o modificar peticions en tests automatitzats, Selenium 4 ja porta eines integrades per interceptar la xarxa i llegir les respostes sense necessitat d'aixecar un proxy extern, gràcies al protocol CDP (Chrome DevTools Protocol) o WebDriver BiDi.
+     */
+    testImplementation("net.lightbody.bmp:browsermob-core:2.1.5")
 }
 
 kotlin {

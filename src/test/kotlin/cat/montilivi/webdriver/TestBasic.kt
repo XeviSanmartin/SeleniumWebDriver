@@ -2,7 +2,7 @@ package cat.montilivi.webdriver
 
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
-import org.junit.jupiter.api.Test
+import org.openqa.selenium.JavascriptExecutor
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeOptions
@@ -10,10 +10,10 @@ import org.openqa.selenium.edge.EdgeDriver
 import org.openqa.selenium.firefox.FirefoxDriver
 import org.openqa.selenium.safari.SafariDriver
 import java.time.Duration
-import kotlin.test.assertEquals
 
 open class TestBasic {
     lateinit var driver: WebDriver
+    lateinit var jse: JavascriptExecutor
 
     @BeforeEach
     fun setupTest() {
@@ -34,6 +34,7 @@ open class TestBasic {
 
         // Configurem l'espera implícita per donar temps a carregar els elements
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30))
+        jse = driver as JavascriptExecutor
     }
 
 //    @Test
